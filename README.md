@@ -1,6 +1,6 @@
-# Packaging a simple HTTP Service using Clojure
+# Simple Clojure HTTP endpoint hosted in Docker image
 
-Packaging a simple HTTP service using Clojure CLI and deps.edn.
+Taking a simple Clojure HTTP service and package it in a minimal Java Docker image.
 
 ## Requirements
 
@@ -8,28 +8,9 @@ The sample application has the following requirements.
 
 * Java 10.0.2
 * Clojure 1.9.0
+* Docker Community Edition Version 18.06.1-ce-mac73 (26764)
 
 ## Usage
-
-### From the command line
-
-To execute the test case.
-
-~~~ bash
-clj -A:test
-~~~
-
-To run the http endpoint.
-
-~~~ bash
-clj -m hello.core
-~~~
-
-To package the endpoint in a jar.
-
-~~~ bash
-clj -A:pack -m mach.pack.alpha.capsule uberjar.jar -m hello.core
-~~~
 
 ### Using the included Makefile
 
@@ -51,8 +32,15 @@ To package the endpoint in a jar.
 make uberjar
 ~~~
 
+### Building the Docker image
+
+~~~ bash
+docker build -t deangerber/simple-service .
+~~~
+
 ## References
 
+* [Docker Community Edition](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 * [Java](http://www.oracle.com/technetwork/java/index.html)
 * [Clojure](https://clojure.org/index)
 * [Clojure Deps and CLI Guide](https://clojure.org/guides/deps_and_cli)
