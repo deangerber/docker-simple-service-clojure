@@ -38,6 +38,12 @@ make uberjar
 docker build -t deangerber/simple-service .
 ~~~
 
+### Running the Docker image
+
+~~~ bash
+docker run -p 3000:3000 -t --rm deangerber/simple-service
+~~~
+
 ## References
 
 * [Docker Community Edition](https://store.docker.com/editions/community/docker-ce-desktop-mac)
